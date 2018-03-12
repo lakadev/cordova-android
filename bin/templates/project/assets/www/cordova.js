@@ -305,7 +305,8 @@ var cordova = {
                 }
             }
         } catch (err) {
-            var msg = 'Error in ' + (isSuccess ? 'Success' : 'Error') + ' callbackId: ' + callbackId + ' : ' + err;
+            var msg = 'Error in ' + (isSuccess ? 'Success' : 'Error') + ' callbackId: ' + callbackId + ' : ';
+            msg += JSON.stringify(err);
             console && console.log && console.log(msg);
             cordova.fireWindowEvent('cordovacallbackerror', { 'message': msg });
             throw err;
